@@ -9,5 +9,9 @@
   },
   "devDependencies": {
     "nuxt": "^3.2.2"
+  },
+  "dependencies": {
+    "mdi": "^2.2.43",
+    "vuetify": "^3.1.4"
   }
 }
