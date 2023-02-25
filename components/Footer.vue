@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const snsList = [
-  { text: "instagram", url: "https://www.instagram.com/asobora.jp" },
-  { text: "youtube", url: "/" },
-  { text: "twitter", url: "/" },
-  { text: "facebook", url: "/" },
+  { title: "instagram", url: "https://www.instagram.com/asobora.jp" },
+  { title: "youtube", url: "/" },
+  { title: "twitter", url: "/" },
+  { title: "facebook", url: "/" },
 ];
 </script>
 
@@ -34,10 +34,14 @@ const snsList = [
             active-color="primary"
           >
             <template v-slot:prepend>
-              <v-icon :icon="`mdi-${sns.text}`" />
+              <v-icon
+                v-if="sns.title !== 'youtube'"
+                :icon="`mdi-${sns.title}`"
+              />
+              <v-icon v-else icon="mdi-youtube-tv" />
             </template>
 
-            <v-list-item-title v-text="sns.text" />
+            <v-list-item-title v-text="sns.title" />
           </v-list-item>
         </v-list>
       </v-col>
@@ -52,7 +56,6 @@ const snsList = [
 <style scoped lang="scss">
 footer {
   background-color: #90caf9;
-  max-height: 270px;
   width: 100%;
 }
 .footer-bar {
@@ -64,8 +67,9 @@ footer {
   justify-content: center;
   align-items: center;
 }
-.sns-list {
-  padding: 15px 20px 10px 20px;
+
+.v-list-item__prepend > .v-icon {
+  margin-right: 5px;
 }
 .copy-right {
   margin-top: 10px;
