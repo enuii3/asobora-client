@@ -1,11 +1,17 @@
+<script setup lang="ts"></script>
+
 <template>
-  <v-app>
+  <v-layout>
     <Header />
     <v-main>
-      <v-container>
-        <slot />
-      </v-container>
+      <slot />
+      <Footer />
     </v-main>
-    <Footer />
-  </v-app>
+  </v-layout>
 </template>
+
+<style scoped>
+main {
+  padding: 0;
+}
+</style>
