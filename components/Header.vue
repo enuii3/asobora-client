@@ -47,6 +47,12 @@ const drawer = ref(false);
     min-height: 100px;
   }
 }
+
+@media (min-width: 900px) {
+  .v-toolbar__content {
+    min-height: 140px;
+  }
+}
 </style>
 
 <style scoped lang="scss">
