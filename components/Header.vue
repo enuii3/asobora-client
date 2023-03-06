@@ -1,68 +1,79 @@
 <script setup lang="ts">
-import { useDisplay } from "vuetify/lib/framework.mjs";
 import { headerMenu } from "~~/src/utils/list";
 
 const drawer = ref(false);
-const display = useDisplay();
-console.log(display.name);
 </script>
 
 <template>
   <v-app-bar flat color="transparent">
-    <v-toolbar-title class="logo">遊坊ら | ASOBORA</v-toolbar-title>
-
-    <template v-slot:append>
-      <v-btn
-        v-for="(item, i) in headerMenu"
-        :key="i"
-        class="header-menu-item"
-        variant="plain"
-        :href="item.link"
-        color="#FFFFFF"
-      >
-        <div class="header-menu-mikan-icon">
-          <MikanIcon />
+    <v-row no-gutters justify="space-around" align-content="center">
+      <v-col align-self="center" cols="3">
+        <img
+          class="logo"
+          src="~/assets/images/asobora-logo.png"
+          alt="asobora-logo"
+        />
+      </v-col>
+      <v-col align-self="center" cols="7" class="d-flex justify-end">
+        <div class="header-menu-item">
+          <v-btn v-for="(item, i) in headerMenu" :key="i" :href="item.link">
+            <div class="header-menu-mikan-icon">
+              <MikanIcon />
+            </div>
+            {{ item.title }}
+          </v-btn>
         </div>
-        {{ item.title }}
-      </v-btn>
-
-      <MikanIcon
-        class="mikan-menu"
-        variant="text"
-        @click.stop="drawer = !drawer"
-      />
-    </template>
+        <MikanIcon
+          class="mikan-menu"
+          variant="text"
+          @click.stop="drawer = !drawer"
+        />
+      </v-col>
+    </v-row>
   </v-app-bar>
-
   <v-navigation-drawer v-model="drawer" location="right" temporary>
     <v-list :items="headerMenu"></v-list>
   </v-navigation-drawer>
 </template>
+
+<style lang="scss">
+@media (max-width: 725px) {
+  .v-toolbar__content {
+    min-height: 70px;
+  }
+}
+@media (min-width: 725px) {
+  .v-toolbar__content {
+    min-height: 100px;
+  }
+}
+</style>
 
 <style scoped lang="scss">
 header {
   width: 100%;
 }
 .logo {
-  color: white;
-  font-weight: bold;
+  padding-top: 20px;
+  width: 80%;
 }
 .v-btn--size-default {
   padding: 0;
 }
 .header-menu-mikan-icon {
   margin-right: 2px;
-  padding-left: 20px;
 }
-@media (min-width: 540px) {
+@media (min-width: 725px) {
   .mikan-menu {
     display: none;
   }
   .header-menu-item {
-    display: block;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 725px) {
   .mikan-menu {
     display: block;
   }
