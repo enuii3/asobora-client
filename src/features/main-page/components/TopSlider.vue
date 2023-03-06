@@ -9,9 +9,7 @@ const modules = [EffectFade, Navigation, Pagination];
 </script>
 
 <script>
-export default {
-  name: TopSlider,
-};
+export default {};
 </script>
 
 <template>
