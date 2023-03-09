@@ -16,5 +16,13 @@ export default defineNuxtConfig({
     define: {
       "process.env.DEBUG": false,
     },
+    //参考文献 https://note.com/aliz/n/nacb19618cdf4
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/_variables.scss" as *;',
+        },
+      },
+    },
   },
 });

@@ -23,15 +23,9 @@ export default {};
     :modules="modules"
     class="mySwiper"
   >
-    <swiper-slide
-      ><img src="~/assets/images/asobora-top-first.jpeg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="~/assets/images/asobora-top-second.jpeg"
-    /></swiper-slide>
-    <swiper-slide
-      ><img src="~/assets/images/asobora-top-third.jpeg"
-    /></swiper-slide>
+    <swiper-slide><img src="/images/asobora-top-first.jpeg" /></swiper-slide>
+    <swiper-slide><img src="/images/asobora-top-second.jpeg" /></swiper-slide>
+    <swiper-slide><img src="/images/asobora-top-third.jpeg" /></swiper-slide>
   </swiper>
 </template>
 

@@ -1,0 +1,26 @@
+$mini: 450px;
+$sp: 450px;
+$tab: 680px;
+$lap: 880px;
+
+@mixin mini {
+  @media screen and (max-width: ($mini)) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (min-width: ($sp)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media screen and (min-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin lap {
+  @media screen and (min-width: ($lap)) {
+    @content;
+  }
+}
