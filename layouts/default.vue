@@ -1,4 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Header } from "~~/src/features/Header";
+import { Footer } from "~~/src/features/Footer";
+</script>
 
 <template>
   <v-layout>
