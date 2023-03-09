@@ -11,6 +11,7 @@
 <style scoped lang="scss">
 .logo {
   width: 100%;
+  min-width: 120px;
   max-width: 220px;
 }
 </style>
