@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import TopSlider from "~~/src/features/main-page/components/TopSlider.vue";
+import { TopSlider } from "~~/src/features/Main";
 import { headerMenu } from "~~/src/utils/list";
 </script>
 
